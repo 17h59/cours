@@ -1,5 +1,5 @@
 boolean estDateValide(int j, int m, int a){
-	
+	return (a>0 && 1 <= m <= 12 && 1 <= jour <= nbJoursDuMois(m, a))
 }
 
 boolean estBissextile(int an){
