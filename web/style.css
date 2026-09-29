@@ -1,0 +1,57 @@
+body {
+	font-family: sans-serif;
+}
+
+.fond {
+	z-index: -1; /*se met derrière les autres éléments*/
+	position: fixed;/*flotte au lieu de pousser dans la mise en page comme un vieux doc word*/
+	width: 100%; /*prend tout l'écran en largeur*/
+	height: 100%; /*pareil en hauteur*/
+	background-image: url('wallpaper.png');
+	background-size : cover; /*au lieu de se dupliquer, l'image se zoom quand elle est pas assez grande*/
+	top: 0; /*colle l'image en haut de l'écran, sinon elle fait la taille de l'écran mais sors de celui ci.*/
+	left: 0;
+	filter: blur(6px); /*self explainatory*/
+	transform: scale(1.05); /*quand on met du blur, ya des bords blancs dégueu sur les bords. Ducoup, on zoom pour cacher ça. en l'occurence on zoom de 5%.*/
+
+}
+
+#Monsieur {
+	/*Alors il faut savoir qu'un composant comme du texte, c'est une boite, et ça se manipule comme un rectange*/
+	display: block; /* force la boite à prendre toute la place horizontalement */
+	text-align: center; /* aligne au centre de la boite */;
+	color: skyblue;
+}
+
+.cadre {
+	position: relative;
+  display: flex; /*active le système de rangement flex*/
+  align-items: center;/*aligne l'image au centre de la ligne horizontale*/
+  justify-content: center;/*pareil pour la ligne vertical, ces deux trucs utilisent flex*/
+  width: 54px;
+  height: 54px;
+  background: rgba(255,255,255,0.08); /*la dernière valeure gère l'opacitée*/
+  border-radius: 14px; /*arrondis les coins carrés*/
+  border: 1px solid rgba(255,255,255,0.05); 
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.2); /*dans l'ordre : décalage horizontal, vertical, blur, couleur.*/
+  transition: 0.3s; /*si transition*/
+ }
+
+.cadre:hover {
+  background: rgba(255, 255, 69 ,0.2);
+  border-color: rgba(255,255,69,0.7);
+}
+
+.longsmr{
+	transition: 0.3s;
+}
+
+.longsmr:hover{
+  background: rgba(255, 255, 69 ,0.2);
+  border-color: rgba(255,255,69,0.7);
+}
+
+#horloge {
+	pointer-events: none;
+}
+
